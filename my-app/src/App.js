@@ -50,7 +50,7 @@ function DFA() {
     if (finalStates.includes(currentState)) {
       setResult("The string is accepted.");
     } else {
-      setResult("The string is not accepted.");
+      setResult("  ");
     }
   };
 
@@ -61,12 +61,13 @@ function DFA() {
 
       <h1>DFA Simulator</h1>
       <div className='mb-10'>
+
         <label className='mb-5'>Number of Languages:</label>
         <input
           type="number"
           value={numLanguages}
           onChange={(e) => {
-            
+
             const value = Math.max(0, parseInt(e.target.value, 10) || 0);
             setNumLanguages(value);
             setLanguages(Array(value).fill(""));
